@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %} {% load static %} {% block title %}Expense List{% endblock %}
+<!-- prettier ignore -->
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Expense List</h1>
+    <ul class="list-group">
+        {% for expense in expenses %}
+        <li class="list-group-item">
+            <strong>{{ expense.category }}</strong>
+            - ${{ expense.amount }} on {{ expense.date }}
+            <p>{{ expense.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

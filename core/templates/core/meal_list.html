@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Meal List{% endblock %} {% block content %}
+<h1 class="my-4">Meal List</h1>
+<ul class="list-group">
+    {% for meal in meals %}
+    <li class="list-group-item">
+        <strong>{{ meal.name }}</strong>
+        - {{ meal.calories }} calories
+        <br />
+        Protein: {{ meal.protein }}g, Carbs: {{ meal.carbs }}g, Fats: {{ meal.fats }}g
+        <p>Ingredients: {{ meal.ingredients }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

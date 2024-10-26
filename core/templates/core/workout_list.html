@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Workout List{% endblock %} {% block content %}
+<h1 class="my-4">Workout List</h1>
+<ul class="list-group">
+    {% for workout in workouts %}
+    <li class="list-group-item">
+        <strong>{{ workout.exercise }}</strong>
+        - {{ workout.date }}
+        <br />
+        Sets: {{ workout.sets }}, Reps: {{ workout.reps }}, Weight: {{ workout.weight }} lbs
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
